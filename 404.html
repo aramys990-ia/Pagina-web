@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada · Dr. Adonis Ramos Midueño</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Karla:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0C161F;
+    --panel: #121F2B;
+    --line: #24343F;
+    --ink: #EAF1F2;
+    --ink-dim: #93A6AE;
+    --pulse: #4FD8B0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:'Karla', sans-serif;
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:24px; text-align:center;
+  }
+  .wrap{max-width:520px;}
+  .code{
+    font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--pulse);
+    letter-spacing:0.12em; margin-bottom:20px; display:flex; align-items:center; justify-content:center; gap:10px;
+  }
+  .code::before, .code::after{content:'';width:24px;height:1px;background:var(--pulse);}
+  h1{font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(32px,6vw,48px); margin-bottom:16px;}
+  p{color:var(--ink-dim); font-size:16px; line-height:1.6; margin-bottom:32px;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px; justify-content:center;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:13px; padding:14px 24px;
+    border-radius:2px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    transition:all .2s ease;
+  }
+  .btn-primary{background:var(--pulse); color:#082019;}
+  .btn-primary:hover{filter:brightness(1.08);}
+  .btn-outline{border:1px solid var(--line); color:var(--ink);}
+  .btn-outline:hover{border-color:var(--pulse); color:var(--pulse);}
+  .ecg{width:100%; max-width:360px; height:60px; margin:0 auto 28px; display:block;}
+  .ecg path{fill:none; stroke:var(--pulse); stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <svg class="ecg" viewBox="0 0 360 60"><path d="M0,30 L100,30 L112,30 L118,12 L126,50 L132,30 L145,30 L215,30 L227,30 L233,12 L241,50 L247,30 L260,30 L360,30"/></svg>
+  <div class="code">ERROR 404</div>
+  <h1>Página no encontrada</h1>
+  <p>La página que buscas no existe o fue movida. Si llegaste aquí desde un enlace, es posible que esté desactualizado.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="/">Volver al inicio →</a>
+    <a class="btn btn-outline" href="https://wa.me/525554316073?text=Hola%2C%20Dr.%20Ramos.%20Encontr%C3%A9%20un%20enlace%20roto%20en%20su%20p%C3%A1gina." target="_blank" rel="noopener">Avisar por WhatsApp</a>
+  </div>
+</div>
+
+</body>
+</html>
