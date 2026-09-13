@@ -16,13 +16,11 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io https://js.hs-scripts.com https://js.hs-analytics.net https://js.hscollectedforms.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self' https://plausible.io https://track.hubspot.com; object-src 'none'; base-uri 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://js.hs-scripts.com https://js.hs-analytics.net https://js.hscollectedforms.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self' https://track.hubspot.com; object-src 'none'; base-uri 'self';">
 <title>Dr. Adonis Ramos Midueño · Medicina de Urgencias y Reanimación</title>
 <link rel="icon" type="image/png" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/favicon-180-apple-touch.png">
 <meta name="description" content="Especialista en Urgencias Médico Quirúrgicas y Alta Especialidad en Medicina de Reanimación. Consulta presencial y virtual en Querétaro.">
-<!-- Verificación de Google Search Console: reemplaza el content="" con el código que te dé Google (ver guía) -->
-<meta name="google-site-verification" content="REEMPLAZA-CON-TU-CODIGO-DE-GOOGLE">
 <!-- Verificación de Bing Webmaster Tools: reemplaza el content="" con tu código, o importa directo desde Google Search Console (más fácil) -->
 <meta name="msvalidate.01" content="REEMPLAZA-CON-TU-CODIGO-DE-BING">
 <link rel="canonical" href="https://dradonisrmidueno.com/index-oscuro.html">
@@ -786,16 +784,11 @@
 }
 </script>
 
-<!--
-  Analítica de visitas con Plausible (sin cookies, no recopila datos personales).
-  Ya configurado con el dominio dradonisrmidueno.com
-  Para que funcione: crea una cuenta gratuita en https://plausible.io y agrega ese mismo dominio ahí.
-  Si prefieres no usar analítica, simplemente borra esta etiqueta <script>.
--->
-<script defer data-domain="dradonisrmidueno.com" src="https://plausible.io/js/script.js"></script>
+<!-- Función de respaldo para que las llamadas a plausible() en el código no generen errores, sin cargar ningún script externo de analítica. -->
 <script>
   window.plausible = window.plausible || function(){ (window.plausible.q = window.plausible.q || []).push(arguments) }
 </script>
+
 </head>
 <body>
 
