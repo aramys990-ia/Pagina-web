@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta charset="UTF-8">
 <script>
   // Redirección por tema: respeta la preferencia manual elegida solo durante esta visita (se olvida al cerrar el navegador); si no hay ninguna, usa el horario (zona horaria Querétaro): 06:00-18:50 = corporativo (index.html), resto = esta versión oscura
   (function(){
@@ -21,7 +22,6 @@
     location.href = archivoDestino;
   }
 </script>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com; object-src 'none'; base-uri 'self';">
 <title>Dr. Adonis Ramos Midueño · Medicina de Urgencias y Reanimación</title>
@@ -905,7 +905,7 @@
     <button type="button" class="theme-switch" onclick="alternarTema('claro', 'index.html')" aria-label="Cambiar a modo claro" title="Cambiar a modo claro" style="margin-left:14px;">
       <img src="assets/sol-icon.png" alt="" width="16" height="16">
     </button>
-    <a class="lang-switch" href="index-oscuro-en.html" aria-label="Switch to English">EN</a>
+    <a class="lang-switch" href="index-oscuro-en.html" aria-label="EN – Switch to English">EN</a>
   </div>
 </nav>
 
@@ -1691,6 +1691,7 @@
     document.body.style.overflow = '';
   }
   privacyLink.addEventListener('click', openPrivacyModal);
+  if(location.hash==='#privacidad') openPrivacyModal();
   privacyCloseBtn.addEventListener('click', closePrivacyModal);
   privacyModal.addEventListener('click', (e)=>{
     if(e.target === privacyModal) closePrivacyModal();

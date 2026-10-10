@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
 <script>
   // Theme redirect: honors a manual preference chosen only for this visit (forgotten when the browser closes); otherwise uses time of day (Querétaro timezone): 06:00-18:50 = corporate (index-en.html), otherwise this dark version
   (function(){
@@ -21,7 +22,6 @@
     location.href = archivoDestino;
   }
 </script>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com; object-src 'none'; base-uri 'self';">
 <title>Dr. Adonis Ramos Midueño · Emergency Medicine & Resuscitation</title>
@@ -905,7 +905,7 @@
     <button type="button" class="theme-switch" onclick="alternarTema('claro', 'index-en.html')" aria-label="Switch to light mode" title="Switch to light mode" style="margin-left:14px;">
       <img src="assets/sol-icon.png" alt="" width="16" height="16">
     </button>
-    <a class="lang-switch" href="index-oscuro.html" aria-label="Cambiar a español">ES</a>
+    <a class="lang-switch" href="index-oscuro.html" aria-label="ES – Cambiar a español">ES</a>
   </div>
 </nav>
 
@@ -1691,6 +1691,7 @@
     document.body.style.overflow = '';
   }
   privacyLink.addEventListener('click', openPrivacyModal);
+  if(location.hash==='#privacidad') openPrivacyModal();
   privacyCloseBtn.addEventListener('click', closePrivacyModal);
   privacyModal.addEventListener('click', (e)=>{
     if(e.target === privacyModal) closePrivacyModal();

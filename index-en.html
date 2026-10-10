@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
 <script>
   // Theme redirect: honors a manual preference chosen only for this visit (forgotten when the browser closes); otherwise uses time of day (Querétaro timezone): 06:00-18:50 = this corporate version, otherwise dark (index-oscuro-en.html)
   (function(){
@@ -21,7 +22,6 @@
     location.href = archivoDestino;
   }
 </script>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Adonis Ramos Midueño · Emergency Medicine & Resuscitation</title>
 <meta name="description" content="Specialist in Emergency and Surgical Medicine, with Advanced Specialty in Resuscitation Medicine. In-person and virtual consultations in Querétaro.">
@@ -248,7 +248,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0B3358; --navy-2:#0C7D88; --teal:#12A5B0; --teal-dark:#0C8A93;
+    --navy:#0B3358; --navy-2:#0C7D88; --teal:#12A5B0; --teal-dark:#0A7A82;
     --bg:#F3F6F8; --surface:#FFFFFF; --ink:#17324A; --ink-dim:#5B7182;
     --line:#E2E8ED; --alert:#D9542A; --radius:14px;
   }
@@ -272,7 +272,7 @@
   .nav-cta{background:var(--navy); color:#fff; font-weight:600; font-size:14px; padding:12px 22px; border-radius:100px; transition:background .2s;}
   .lang-switch{font-size:13px; font-weight:600; color:var(--navy); padding:6px 12px; border:1px solid var(--navy); border-radius:100px; margin-right:14px; transition:all .2s;}
   .lang-switch:hover{background:var(--navy); color:#fff;}
-  .theme-switch{display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:none; cursor:pointer; margin-right:14px; transition:all .2s; color:var(--ink-dim);}
+  .theme-switch{flex-shrink:0; min-width:30px; display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:none; cursor:pointer; margin-right:14px; transition:all .2s; color:var(--ink-dim);}
   .theme-switch:hover{background:var(--bg); color:var(--navy);}
   .theme-switch svg{width:17px; height:17px;}
   @media(max-width:720px){ .lang-switch{margin-right:8px; padding:5px 9px; font-size:12px;} .theme-switch{margin-right:8px; width:30px; height:30px;} .theme-switch svg{width:15px; height:15px;} }
@@ -678,7 +678,7 @@
     <button type="button" class="theme-switch" onclick="alternarTema('oscuro', 'index-oscuro-en.html')" aria-label="Switch to dark mode" title="Switch to dark mode">
       <img src="assets/luna-icon.png" alt="" width="17" height="17">
     </button>
-    <a class="lang-switch" href="index.html" aria-label="Cambiar a español" style="margin-left:14px;">ES</a>
+    <a class="lang-switch" href="index.html" aria-label="ES – Cambiar a español" style="margin-left:14px;">ES</a>
   </div>
 </nav>
 
@@ -1284,6 +1284,7 @@
   function openPrivacyModal(){ privacyModal.classList.add('open'); document.body.style.overflow='hidden'; }
   function closePrivacyModal(){ privacyModal.classList.remove('open'); document.body.style.overflow=''; }
   privacyLink.addEventListener('click', openPrivacyModal);
+  if(location.hash==='#privacidad') openPrivacyModal();
   privacyCloseBtn.addEventListener('click', closePrivacyModal);
   privacyModal.addEventListener('click', e=>{ if(e.target===privacyModal) closePrivacyModal(); });
   document.addEventListener('keydown', e=>{
