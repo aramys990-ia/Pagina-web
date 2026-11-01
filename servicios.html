@@ -576,6 +576,18 @@
   #cookie-more{background:transparent;color:var(--navy)}
   #cookie-ok{background:var(--navy);color:#fff}
   @media print{#cookie-notice{display:none!important}}
+
+  /* Navegación compacta en celular (evita que el botón de idioma se salga) */
+  @media(max-width:560px){
+    nav .wrap{gap:6px;}
+    .brand{gap:8px;} .brand-mark,.brand img{width:36px; height:36px;}
+    .brand span{font-size:13px;} .brand small{font-size:10px;}
+    .nav-cta{padding:6px 9px; font-size:11px;}
+    .lang-switch{padding:6px 9px; font-size:11px; margin-left:6px;}
+    .theme-switch{width:28px; height:28px; min-width:28px; margin-right:4px;}
+    nav .wrap{padding-left:14px; padding-right:14px;}
+  }
+  @media(max-width:400px){ .nav-cta{padding:6px 6px; font-size:10px;} .brand span{font-size:12px;} .brand small{font-size:9px;} nav .wrap{padding-left:10px; padding-right:10px;} .brand{gap:6px;} }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCPXWTJFXL"></script>
