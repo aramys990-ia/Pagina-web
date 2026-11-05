@@ -1464,7 +1464,7 @@
     <p style="margin-top:4px;">Todos los derechos reservados © 2026</p>
     <p class="last-updated" id="last-updated">Página actualizada: Agosto 2026</p>
     <p class="footer-social"><a href="https://www.instagram.com/dradonisrmidueno" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/dradonisrmidueno" target="_blank" rel="noopener">Facebook</a></p>
-    <p style="margin-top:10px;"><a href="https://share.google/Zzu9MU8hFluUum4Ur" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Perfil en Google</a> &nbsp;·&nbsp; <button type="button" class="footer-link-btn" id="share-site">Compartir sitio</button> &nbsp;·&nbsp; <button type="button" id="privacy-link" class="footer-link-btn">Aviso de privacidad</button></p>
+    <p style="margin-top:10px;"><a href="https://share.google/Zzu9MU8hFluUum4Ur" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Perfil en Google</a> &nbsp;·&nbsp; <button type="button" class="footer-link-btn" id="footer-vcard">Guardar contacto</button> &nbsp;·&nbsp; <button type="button" class="footer-link-btn" id="share-site">Compartir sitio</button> &nbsp;·&nbsp; <button type="button" id="privacy-link" class="footer-link-btn">Aviso de privacidad</button></p>
   </div>
 </footer>
 
@@ -1835,7 +1835,6 @@
   }
   document.querySelectorAll('.vcard-qr').forEach(el=>{
     el.addEventListener('click', ()=>{
-      showToast('Contacto descargado');
       plausible('vCard descargado');
     });
   });
@@ -1921,7 +1920,7 @@
   var vcHref=trigger.getAttribute('href'), saveBtn=document.getElementById('vc-save'), shareBtn=document.getElementById('vc-share'),
       closeBtn=document.getElementById('vcard-modal-close'), toastEl=document.getElementById('vc-toast'), siteShare=document.getElementById('share-site'),
       lastFocus=null, TXT='Dr. Adonis Ramos Midueño · Medicina de Urgencias y Reanimación', COPIED='Enlace copiado';
-  saveBtn.setAttribute('href', vcHref);
+  saveBtn.setAttribute('href', vcHref); saveBtn.addEventListener('click',function(){ toast('Contacto descargado'); });
   function openM(){ lastFocus=document.activeElement; modal.classList.add('open'); document.body.style.overflow='hidden'; closeBtn.focus(); }
   function closeM(){ modal.classList.remove('open'); document.body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
   trigger.addEventListener('click', function(e){ e.preventDefault(); openM(); });
@@ -1958,6 +1957,12 @@
   var a=document.getElementById('fc-save'), b=document.getElementById('fc-share');
   if(a) a.addEventListener('click',function(){ var t=document.querySelector('a.vcard-qr'); if(t) t.click(); });
   if(b) b.addEventListener('click',function(){ var t=document.getElementById('share-site'); if(t) t.click(); });
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('footer-vcard');
+  if(f) f.addEventListener('click',function(){ var t=document.querySelector('a.vcard-qr'); if(t) t.click(); });
 })();
 </script>
 </body>

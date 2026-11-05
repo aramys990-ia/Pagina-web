@@ -287,7 +287,7 @@
   var vcHref=trigger.getAttribute('href'), saveBtn=document.getElementById('vc-save'), shareBtn=document.getElementById('vc-share'),
       closeBtn=document.getElementById('vcard-modal-close'), toastEl=document.getElementById('vc-toast'), siteShare=document.getElementById('share-site'),
       lastFocus=null, TXT='Dr. Adonis Ramos Midueño · Medicina de Urgencias y Reanimación', COPIED='Enlace copiado';
-  saveBtn.setAttribute('href', vcHref);
+  saveBtn.setAttribute('href', vcHref); saveBtn.addEventListener('click',function(){ toast('Contacto descargado'); });
   function openM(){ lastFocus=document.activeElement; modal.classList.add('open'); document.body.style.overflow='hidden'; closeBtn.focus(); }
   function closeM(){ modal.classList.remove('open'); document.body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
   trigger.addEventListener('click', function(e){ e.preventDefault(); openM(); });
