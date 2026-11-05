@@ -697,6 +697,14 @@
   .tel-actions{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:12px;}
   .tel-actions .tel-cta{margin-top:0;}
   .tel-cta-alt{background:transparent!important; color:#fff!important; border:1.5px solid rgba(255,255,255,.85);}
+
+  .filosofia-cta{max-width:620px; margin:30px auto 0; padding-top:24px; border-top:1px solid var(--line); text-align:center;}
+  .filosofia-cta p{font-size:14px; color:var(--ink-dim); margin:0 0 14px; text-align:center;}
+  .filosofia-cta-btns{display:flex; flex-wrap:wrap; gap:10px; justify-content:center;}
+  .filosofia-cta-btns button{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:11px 20px; font:inherit; font-weight:700; font-size:14px; border-radius:10px; cursor:pointer; border:1.5px solid var(--navy);}
+  .filosofia-cta-btns .fc-save{background:var(--navy); color:#fff;}
+  .filosofia-cta-btns .fc-share{background:transparent; color:var(--navy);}
+  .filosofia-cta-btns svg{width:16px; height:16px;}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCPXWTJFXL"></script>
@@ -863,6 +871,13 @@
         <p>Exceptional care doesn't end when the consultation does.</p>
         <p>I make sure the patient understands what was found, what it means, what needs to be monitored, and what the next steps are. My goal isn't just to resolve a consultation — it's to bring clarity to the decision-making process.</p>
       </details>
+    </div>
+    <div class="filosofia-cta">
+      <p>Keep my contact details at hand.</p>
+      <div class="filosofia-cta-btns">
+        <button type="button" class="fc-save" id="fc-save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M5 21h14"/></svg>Save contact</button>
+        <button type="button" class="fc-share" id="fc-share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>Share site</button>
+      </div>
     </div>
       </div>
     </details>
@@ -1649,6 +1664,13 @@
     } else shareLink();
   });
   if(siteShare) siteShare.addEventListener('click', shareLink);
+})();
+</script>
+<script>
+(function(){
+  var a=document.getElementById('fc-save'), b=document.getElementById('fc-share');
+  if(a) a.addEventListener('click',function(){ var t=document.querySelector('a.vcard-qr'); if(t) t.click(); });
+  if(b) b.addEventListener('click',function(){ var t=document.getElementById('share-site'); if(t) t.click(); });
 })();
 </script>
 </body>
