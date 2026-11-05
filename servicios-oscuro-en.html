@@ -6,7 +6,7 @@
   // Theme redirect: honors a manual preference chosen only for this visit (forgotten when the browser closes); otherwise uses time of day (Querétaro timezone): 06:00-18:50 = corporate (servicios-en.html), otherwise this dark version
   (function(){
     var pref = sessionStorage.getItem('temaPreferido');
-    if(pref === 'claro'){ location.replace('servicios-en.html'); return; }
+    if(pref === 'claro'){ location.replace('servicios-en.html'+location.search+location.hash); return; }
     if(pref === 'oscuro'){ return; }
     var parts = new Intl.DateTimeFormat('en-US', {timeZone:'America/Mexico_City', hour:'numeric', minute:'numeric', hour12:false}).formatToParts(new Date());
     var hour = parseInt(parts.find(function(p){return p.type==='hour';}).value, 10);
@@ -14,7 +14,7 @@
     var totalMin = hour * 60 + minute;
     var isDay = totalMin >= 360 && totalMin < 1130; // 06:00 = 360, 18:50 = 1130
     if(isDay){
-      location.replace('servicios-en.html');
+      location.replace('servicios-en.html'+location.search+location.hash);
     }
   })();
   function alternarTema(temaDestino, archivoDestino){

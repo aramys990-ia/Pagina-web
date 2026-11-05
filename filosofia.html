@@ -6,13 +6,13 @@
   // Redirección por tema: respeta la preferencia manual (solo durante esta visita); si no hay, usa el horario (Querétaro): 06:00-18:50 = claro, resto = oscuro
   (function(){
     var pref = sessionStorage.getItem('temaPreferido');
-    if(pref === 'oscuro'){ location.replace('filosofia-oscuro.html'); return; }
+    if(pref === 'oscuro'){ location.replace('filosofia-oscuro.html'+location.search+location.hash); return; }
     if(pref === 'claro'){ return; }
     var parts = new Intl.DateTimeFormat('en-US', {timeZone:'America/Mexico_City', hour:'numeric', minute:'numeric', hour12:false}).formatToParts(new Date());
     var hour = parseInt(parts.find(function(p){return p.type==='hour';}).value, 10);
     var minute = parseInt(parts.find(function(p){return p.type==='minute';}).value, 10);
     var totalMin = hour * 60 + minute;
-    if(!(totalMin >= 360 && totalMin < 1130)){ location.replace('filosofia-oscuro.html'); }
+    if(!(totalMin >= 360 && totalMin < 1130)){ location.replace('filosofia-oscuro.html'+location.search+location.hash); }
   })();
   function alternarTema(temaDestino, archivoDestino){
     sessionStorage.setItem('temaPreferido', temaDestino);
