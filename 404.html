@@ -5,58 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Página no encontrada · Dr. Adonis Ramos Midueño</title>
 <meta name="robots" content="noindex">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Karla:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+<base href="/">
+<link rel="icon" type="image/png" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/favicon-180-apple-touch.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg: #0C161F;
-    --panel: #121F2B;
-    --line: #24343F;
-    --ink: #EAF1F2;
-    --ink-dim: #93A6AE;
-    --pulse: #4FD8B0;
-  }
+  :root{--navy:#0B3358; --teal:#12A5B0; --teal-dark:#0A7A82; --bg:#F3F6F8; --surface:#fff; --ink:#17324A; --ink-dim:#5B7182; --line:#E2E8ED; --radius:14px;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    background:var(--bg); color:var(--ink); font-family:'Karla', sans-serif;
-    min-height:100vh; display:flex; align-items:center; justify-content:center;
-    padding:24px; text-align:center;
-  }
-  .wrap{max-width:520px;}
-  .code{
-    font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--pulse);
-    letter-spacing:0.12em; margin-bottom:20px; display:flex; align-items:center; justify-content:center; gap:10px;
-  }
-  .code::before, .code::after{content:'';width:24px;height:1px;background:var(--pulse);}
-  h1{font-family:'Archivo', sans-serif; font-weight:800; font-size:clamp(32px,6vw,48px); margin-bottom:16px;}
-  p{color:var(--ink-dim); font-size:16px; line-height:1.6; margin-bottom:32px;}
-  .cta-row{display:flex; flex-wrap:wrap; gap:14px; justify-content:center;}
-  .btn{
-    font-family:'IBM Plex Mono', monospace; font-size:13px; padding:14px 24px;
-    border-radius:2px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
-    transition:all .2s ease;
-  }
-  .btn-primary{background:var(--pulse); color:#082019;}
-  .btn-primary:hover{filter:brightness(1.08);}
-  .btn-outline{border:1px solid var(--line); color:var(--ink);}
-  .btn-outline:hover{border-color:var(--pulse); color:var(--pulse);}
-  .ecg{width:100%; max-width:360px; height:60px; margin:0 auto 28px; display:block;}
-  .ecg path{fill:none; stroke:var(--pulse); stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+  body{min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  .card{width:100%; max-width:520px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:36px 28px; text-align:center;}
+  .tarjeta{width:150px; height:auto; margin:0 auto 20px; border-radius:11px; box-shadow:0 10px 26px rgba(11,51,88,.28);}
+  .code{font-family:'Poppins',sans-serif; font-weight:700; font-size:14px; letter-spacing:.14em; color:var(--teal-dark); margin-bottom:8px;}
+  h1{font-family:'Poppins',sans-serif; font-size:24px; color:var(--navy); line-height:1.25; margin-bottom:10px;}
+  p{color:var(--ink-dim); font-size:15px;}
+  .btns{display:flex; flex-direction:column; gap:10px; margin:24px auto 0; max-width:300px;}
+  .btn{display:block; height:48px; line-height:48px; border-radius:var(--radius); font-weight:600; font-size:15px; text-decoration:none; color:#fff; background:var(--navy);}
+  .btn.wa{background:#0B7A4B;}
+  .btn.alt{background:transparent; color:var(--navy); border:1px solid var(--navy); line-height:46px;}
+  .btn:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+  hr{border:0; border-top:1px solid var(--line); margin:26px 0 20px;}
+  .en h1{font-size:19px;} .en p{font-size:14px;}
+  .foot{margin-top:22px; font-size:12px; color:var(--ink-dim);}
 </style>
 </head>
 <body>
-
-<div class="wrap">
-  <svg class="ecg" viewBox="0 0 360 60"><path d="M0,30 L100,30 L112,30 L118,12 L126,50 L132,30 L145,30 L215,30 L227,30 L233,12 L241,50 L247,30 L260,30 L360,30"/></svg>
+<main class="card">
+  <picture><source srcset="/assets/tarjeta-nfc-404.webp" type="image/webp"><img class="tarjeta" src="/assets/tarjeta-nfc-404.png" alt="Tarjeta de presentación del Dr. Adonis Ramos Midueño" width="150" height="234"></picture>
   <div class="code">ERROR 404</div>
-  <h1>Página no encontrada</h1>
-  <p>La página que buscas no existe o fue movida. Si llegaste aquí desde un enlace, es posible que esté desactualizado.</p>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="/">Volver al inicio →</a>
-    <a class="btn btn-outline" href="https://wa.me/525554316073?text=Hola%2C%20Dr.%20Ramos.%20Encontr%C3%A9%20un%20enlace%20roto%20en%20su%20p%C3%A1gina." target="_blank" rel="noopener">Avisar por WhatsApp</a>
+  <h1>No encontramos esta página</h1>
+  <p>Es posible que el enlace esté incompleto o que la página haya cambiado de dirección.</p>
+  <div class="btns">
+    <a class="btn" href="/">Volver al inicio</a>
+    <a class="btn wa" href="https://wa.me/525554316073" rel="noopener">Escribir por WhatsApp</a>
   </div>
-</div>
-
+  <hr>
+  <div class="en">
+    <h1>Page not found</h1>
+    <p>The link may be incomplete or the page may have moved.</p>
+    <div class="btns">
+      <a class="btn alt" href="/index-en.html">Go to the English site</a>
+    </div>
+  </div>
+  <p class="foot">Dr. Adonis Ramos Midueño · Vital Care Advanced for You</p>
+</main>
 </body>
 </html>
