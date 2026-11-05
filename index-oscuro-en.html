@@ -717,6 +717,22 @@
   #vc-toast{background:var(--panel,#121F2B); color:var(--ink); border:1px solid var(--pulse); border-radius:2px;}
 
   .footer-social{margin-top:10px;} .footer-social a{color:inherit; text-decoration:underline;}
+
+  .urgent-banner .tag-inline-btn{background:var(--pulse); color:#082019; border:1px solid var(--pulse); display:inline-flex; align-items:center; gap:6px; padding:4px 12px 4px 10px; font-weight:600;}
+  .urgent-banner .tag-inline-btn:hover{background:var(--pulse); filter:brightness(1.1); border-color:var(--pulse);}
+  .urgent-banner .tag-inline-btn[aria-expanded="true"]{background:var(--pulse); color:#082019; border-color:var(--pulse);}
+  .tag-inline-btn svg{width:14px; height:14px; flex-shrink:0;}
+  .tag-inline-btn .tel-plus{font-size:15px; line-height:1; font-weight:700; transition:transform .2s ease;}
+  .tag-inline-btn[aria-expanded="true"] .tel-plus{transform:rotate(45deg);}
+  @keyframes telPulse{0%{box-shadow:0 0 0 0 rgba(79,216,176,.65);}100%{box-shadow:0 0 0 12px rgba(79,216,176,0);}}
+  #telemedicina-toggle{animation:telPulse 1.6s ease-out 3;}
+  @media (prefers-reduced-motion:reduce){#telemedicina-toggle{animation:none;}}
+  .tel-cta{display:inline-block; margin-top:12px; background:var(--pulse); color:#082019; padding:10px 18px; border-radius:2px; font-weight:700; font-size:13.5px; text-decoration:none;}
+  .urgent-banner .tel-legend p{color:var(--ink-dim); font-size:12.5px; line-height:1.7; margin:0;}
+
+  .tel-actions{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:12px;}
+  .tel-actions .tel-cta{margin-top:0;}
+  .tel-cta-alt{background:transparent!important; color:var(--pulse)!important; border:1px solid var(--pulse);}
 </style>
 
 <script type="application/ld+json">
@@ -1191,13 +1207,13 @@
         <h3>24/7/365 Emergency Care</h3>
         <p>Emergency care available as:</p>
         <div class="tag-row">
-          <span class="tag-inline">Hospital-based</span> <span class="tag-inline">Office visit</span> <button type="button" class="tag-inline tag-inline-btn" id="telemedicina-toggle" aria-expanded="false" aria-controls="telemedicina-legend">Telemedicine</button>
+          <span class="tag-inline">Hospital-based</span> <span class="tag-inline">Office visit</span> <button type="button" class="tag-inline tag-inline-btn" id="telemedicina-toggle" aria-expanded="false" aria-controls="telemedicina-legend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="M15 10.5 22 7v10l-7-3.5z"/></svg><span>Telemedicine</span><span class="tel-plus" aria-hidden="true">+</span></button>
         </div>
         <p>Ambulance support for transfers involving:</p>
         <div class="tag-row">
           <span class="tag-inline">Emergency</span> <span class="tag-inline">Intensive Care</span> <span class="tag-inline">Scheduled</span>
         </div>
-        <p id="telemedicina-legend" class="tel-legend" hidden>Remote assessment for guidance, follow-up, and second opinions. Ideal when travel isn't feasible or a quick initial evaluation is needed.</p>
+        <div id="telemedicina-legend" class="tel-legend" hidden><p>Remote assessment for guidance, follow-up, and second opinions. Ideal when travel isn't feasible or a quick initial evaluation is needed.</p><div class="tel-actions"><a class="tel-cta" href="https://calendly.com/consultadradonisrmidueno/teleconsulta-medica" target="_blank" rel="noopener" onclick="if(typeof trackContacto==='function')trackContacto('calendly','telemedicina');">Book telemedicine →</a><a class="tel-cta tel-cta-alt" href="https://wa.me/525554316073" onclick="event.preventDefault(); abrirWhatsApp('Hello Dr. Ramos, I am interested in a telemedicine consultation', ['nombre','edad','motivo'], {siempre:true, sinEncabezado:true, origen:'telemedicina', labels:{motivo:'Reason for consultation'}});">Ask on WhatsApp</a></div></div>
       </div>
       <a class="nav-cta" href="https://wa.me/525554316073" onclick="event.preventDefault(); abrirWhatsApp('Hello Dr. Ramos, I am requesting an urgent assessment', ['nombre','edad','motivo'], {siempre:true, sinEncabezado:true, origen:'boton_urgente', labels:{motivo:'Reason for assessment'}});">Message now →</a>
     </div>

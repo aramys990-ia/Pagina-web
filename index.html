@@ -681,6 +681,22 @@
   @media print{#vcard-modal,#vc-toast{display:none!important}}
 
   .footer-social{margin-top:10px;} .footer-social a{color:inherit; text-decoration:underline;}
+
+  .urgent-banner .tag-inline-btn{background:#fff; color:var(--navy); display:inline-flex; align-items:center; gap:6px; padding:4px 12px 4px 10px; font-weight:700; box-shadow:0 2px 10px rgba(0,0,0,.18);}
+  .urgent-banner .tag-inline-btn:hover{background:#E9F6F7;}
+  .urgent-banner .tag-inline-btn[aria-expanded="true"]{background:#fff;}
+  .tag-inline-btn svg{width:14px; height:14px; flex-shrink:0;}
+  .tag-inline-btn .tel-plus{font-size:15px; line-height:1; font-weight:700; transition:transform .2s ease;}
+  .tag-inline-btn[aria-expanded="true"] .tel-plus{transform:rotate(45deg);}
+  @keyframes telPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.75);}100%{box-shadow:0 0 0 12px rgba(255,255,255,0);}}
+  #telemedicina-toggle{animation:telPulse 1.6s ease-out 3;}
+  @media (prefers-reduced-motion:reduce){#telemedicina-toggle{animation:none;}}
+  .tel-cta{display:inline-block; margin-top:12px; background:#fff; color:var(--navy); padding:10px 18px; border-radius:var(--radius); font-weight:700; font-size:13.5px; text-decoration:none;}
+  .urgent-banner .tel-legend p{color:rgba(255,255,255,0.85); font-size:13.5px; line-height:1.7; margin:0;}
+
+  .tel-actions{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:12px;}
+  .tel-actions .tel-cta{margin-top:0;}
+  .tel-cta-alt{background:transparent!important; color:#fff!important; border:1.5px solid rgba(255,255,255,.85);}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCPXWTJFXL"></script>
@@ -978,13 +994,13 @@
         <h3>Atención de urgencias 24/7/365</h3>
         <p>Atención de Urgencias en modalidad:</p>
         <div class="tag-row">
-          <span class="tag-inline">Hospitalaria</span> <span class="tag-inline">Consultorio</span> <button type="button" class="tag-inline tag-inline-btn" id="telemedicina-toggle" aria-expanded="false" aria-controls="telemedicina-legend">Telemedicina</button>
+          <span class="tag-inline">Hospitalaria</span> <span class="tag-inline">Consultorio</span> <button type="button" class="tag-inline tag-inline-btn" id="telemedicina-toggle" aria-expanded="false" aria-controls="telemedicina-legend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="M15 10.5 22 7v10l-7-3.5z"/></svg><span>Telemedicina</span><span class="tel-plus" aria-hidden="true">+</span></button>
         </div>
         <p>Apoyo con servicio de ambulancia para traslados de:</p>
         <div class="tag-row">
           <span class="tag-inline">Urgencias</span> <span class="tag-inline">Cuidados Intensivos</span> <span class="tag-inline">Programados</span>
         </div>
-        <p id="telemedicina-legend" class="tel-legend" hidden>Valoración a distancia para orientación, seguimiento y segunda opinión. Ideal cuando el traslado no es viable o se requiere una primera evaluación rápida.</p>
+        <div id="telemedicina-legend" class="tel-legend" hidden><p>Valoración a distancia para orientación, seguimiento y segunda opinión. Ideal cuando el traslado no es viable o se requiere una primera evaluación rápida.</p><div class="tel-actions"><a class="tel-cta" href="https://calendly.com/consultadradonisrmidueno/teleconsulta-medica" target="_blank" rel="noopener" onclick="if(typeof trackContacto==='function')trackContacto('calendly','telemedicina');">Agendar telemedicina →</a><a class="tel-cta tel-cta-alt" href="https://wa.me/525554316073" onclick="event.preventDefault(); abrirWhatsApp('Hola Dr. Ramos, me interesa una consulta por telemedicina', ['nombre','edad','motivo'], {siempre:true, sinEncabezado:true, origen:'telemedicina', labels:{motivo:'Motivo de consulta'}});">Consultar por WhatsApp</a></div></div>
       </div>
       <a class="nav-cta" href="https://wa.me/525554316073" onclick="event.preventDefault(); abrirWhatsApp('Hola Dr. Ramos, solicito una valoración urgente', ['nombre','edad','motivo'], {siempre:true, sinEncabezado:true, origen:'boton_urgente', labels:{motivo:'Motivo de valoración'}});">Escribir ahora →</a>
     </div>
