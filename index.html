@@ -743,8 +743,27 @@
   @media print{.quick-bar{display:none;}}
 
   /* Acceso rápido: tipografía y tono igual que el nombre y el lema del banner */
-  .o3-sec .ttl{font-size:18px; font-weight:700; letter-spacing:0; text-transform:none; color:var(--navy);}
+  .o3-sec .ttl{font-size:18px; font-weight:700; letter-spacing:0; text-transform:none; color:#fff;}
   .o3-sec .main span{font-size:20px; font-weight:600; color:#7FE8CE;}
+
+  /* Flecha "volver arriba": encima de la barra fija (celular) y en la esquina inferior derecha (computadora) */
+  #back-to-top{transition:opacity .25s ease, transform .25s ease, visibility .25s, bottom .25s ease;}
+  @media (max-width:700px){ body:has(.quick-bar.show) #back-to-top{bottom:calc(78px + env(safe-area-inset-bottom)); right:14px;} }
+  @media (min-width:701px){
+    #back-to-top{bottom:20px; right:25px;}
+    .float-whatsapp, .float-call{transition:transform .2s ease, box-shadow .2s ease, bottom .25s ease;}
+    body:has(#back-to-top.show) .float-whatsapp{bottom:84px;}
+    body:has(#back-to-top.show) .float-call{bottom:156px;}
+  }
+  /* Pulso de los botones de la barra fija */
+  @keyframes qbPulseCall{0%{box-shadow:0 0 0 0 rgba(127,224,195,.75);}30%{box-shadow:0 0 0 10px rgba(127,224,195,0);}100%{box-shadow:0 0 0 10px rgba(127,224,195,0);}}
+  @keyframes qbPulseBook{0%{box-shadow:0 0 0 0 rgba(11,51,88,.55);}30%{box-shadow:0 0 0 10px rgba(11,51,88,0);}100%{box-shadow:0 0 0 10px rgba(11,51,88,0);}}
+  @keyframes qbPulseWa{0%{box-shadow:0 0 0 0 rgba(11,122,75,.6);}30%{box-shadow:0 0 0 10px rgba(11,122,75,0);}100%{box-shadow:0 0 0 10px rgba(11,122,75,0);}}
+  .quick-bar .qb-call{animation:qbPulseCall 4s ease-out infinite;}
+  .quick-bar .qb-book{animation:qbPulseBook 4s ease-out infinite;}
+  .quick-bar .qb-wa{animation:qbPulseWa 4s ease-out infinite;}
+  .quick-bar a:hover, .quick-bar a:focus-visible{animation:none;}
+  @media (prefers-reduced-motion:reduce){.quick-bar a{animation:none;}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCPXWTJFXL"></script>
