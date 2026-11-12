@@ -748,6 +748,11 @@
   nav .nav-cta{animation:navPulse 4s ease-out infinite;}
   nav .nav-cta:hover,nav .nav-cta:focus-visible{animation:none;}
   @media (prefers-reduced-motion:reduce){nav .nav-cta{animation:none;}}
+
+  /* Indicador "en línea": el puntito del distintivo late suavemente */
+  @keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(79,216,176,.7);}60%{box-shadow:0 0 0 7px rgba(79,216,176,0);}100%{box-shadow:0 0 0 0 rgba(79,216,176,0);}}
+  .hero-badge-dark .dot{animation:dotPulse 2s ease-out infinite;}
+  @media (prefers-reduced-motion:reduce){.hero-badge-dark .dot{animation:none;}}
 </style>
 
 <script type="application/ld+json">
