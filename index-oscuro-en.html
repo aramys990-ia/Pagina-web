@@ -741,6 +741,12 @@
   .filosofia-cta-btns .fc-save{background:var(--pulse); color:#082019;}
   .filosofia-cta-btns .fc-share{background:transparent; color:var(--pulse);}
   .filosofia-cta-btns svg{width:16px; height:16px;}
+
+  /* Pulso suave del botón Agendar consulta (barra superior) */
+  @keyframes navPulse{0%{box-shadow:0 0 0 0 rgba(79,216,176,.55);}30%{box-shadow:0 0 0 6px rgba(79,216,176,0);}100%{box-shadow:0 0 0 6px rgba(79,216,176,0);}}
+  nav .nav-cta{animation:navPulse 4s ease-out infinite;}
+  nav .nav-cta:hover,nav .nav-cta:focus-visible{animation:none;}
+  @media (prefers-reduced-motion:reduce){nav .nav-cta{animation:none;}}
 </style>
 
 <script type="application/ld+json">

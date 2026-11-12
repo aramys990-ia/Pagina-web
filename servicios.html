@@ -625,6 +625,12 @@
   .tel-actions{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:12px;}
   .tel-actions .tel-cta{margin-top:0;}
   .tel-cta-alt{background:transparent!important; color:#fff!important; border:1.5px solid rgba(255,255,255,.85);}
+
+  /* Pulso suave del botón Agendar consulta (barra superior) */
+  @keyframes navPulse{0%{box-shadow:0 0 0 0 rgba(11,51,88,.55);}30%{box-shadow:0 0 0 6px rgba(11,51,88,0);}100%{box-shadow:0 0 0 6px rgba(11,51,88,0);}}
+  nav .nav-cta{animation:navPulse 4s ease-out infinite;}
+  nav .nav-cta:hover,nav .nav-cta:focus-visible{animation:none;}
+  @media (prefers-reduced-motion:reduce){nav .nav-cta{animation:none;}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCPXWTJFXL"></script>
